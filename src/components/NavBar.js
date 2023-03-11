@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from "react-router-dom"
 import { Button, Segment } from 'semantic-ui-react'
 
@@ -7,24 +7,24 @@ function NavBar() {
 
     return (
         <div>
-            <Segment>
-                <Button size="huge" inverted color="black" as={ NavLink }
+            <Segment style={{"backgroundColor": "black"}}>
+                <Button size="huge" inverted color="teal" as={ NavLink }
                     to="/"
                     exact>
                         Home
                 </Button>
-                <Button size="huge" inverted color="black" as={ NavLink }
-                    to="/"
+                <Button size="huge" inverted color="teal" as={ NavLink }
+                    to="/top_games"
                     exact>
                         Top Games of 2022
                 </Button>
-                <Button size="huge" inverted color="black" as={ NavLink }
-                    to="/"
+                <Button size="huge" inverted color="teal" as={ NavLink }
+                    to="/anticipated_games"
                     exact>
                         Most Anticipated Games of 2023
                 </Button>
-                <Button size="huge" inverted color="black" as={ NavLink }
-                    to="/"
+                <Button size="huge" inverted color="teal" as={ NavLink }
+                    to="/reviews"
                     exact>
                         Reviews 
                 </Button>
