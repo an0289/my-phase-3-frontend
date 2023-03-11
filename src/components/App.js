@@ -31,11 +31,11 @@ function App() {
         </Header>
         <div>
         <Switch>
-            <Route exact path="/top_games">
-                <TopGames topGames={topGames} setTopGames={setTopGames}/>
-            </Route>
             <Route exact path="/anticipated_games">
                 <AnticipatedGames anticipatedGames={anticipatedGames} setAnticipatedGames={setAnticipatedGames} />
+            </Route>
+            <Route exact path="/top_games">
+                <TopGames topGames={topGames} setTopGames={setTopGames}/>
             </Route>
             <Route exact path="/reviews">
                 <Reviews />

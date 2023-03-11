@@ -14,14 +14,14 @@ function NavBar() {
                         Home
                 </Button>
                 <Button size="huge" inverted color="teal" as={ NavLink }
-                    to="/top_games"
-                    exact>
-                        Top Games of 2022
-                </Button>
-                <Button size="huge" inverted color="teal" as={ NavLink }
                     to="/anticipated_games"
                     exact>
                         Most Anticipated Games of 2023
+                </Button>
+                <Button size="huge" inverted color="teal" as={ NavLink }
+                    to="/top_games"
+                    exact>
+                        Top Games of 2022
                 </Button>
                 <Button size="huge" inverted color="teal" as={ NavLink }
                     to="/reviews"
