@@ -5,11 +5,24 @@ import NavBar from './NavBar'
 import TopGames from './TopGames'
 import AnticipatedGames from './AnticipatedGames'
 import Reviews from './Reviews'
+import Home from './Home'
 
 
 function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:9292/top_games")
+        .then((r) => r.json())
+        .then((topGames) => setTopGames(topGames))
+    }, [])
+
+    useEffect(() => {
+        fetch("http://localhost:9292/anticipated_games")
+        .then((r) => r.json())
+        .then((anticipatedGames) => setAnticipatedGames(anticipatedGames))
+    }, [])
 
   return (
     <div style={{ backgroundColor: "black" }}>
