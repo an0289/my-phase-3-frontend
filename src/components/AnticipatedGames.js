@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Header, Grid, Image, Search, Divider } from 'semantic-ui-react'
 import AnticipatedGameCard from './AnticipatedGameCard'
 
-function AnticipatedGames() {
+function AnticipatedGames({ anticipatedGames, setAnticipatedGames }) {
     return (
         <div style={{ backgroundColor:"white" }}>
         <Divider hidden />
@@ -20,7 +20,12 @@ function AnticipatedGames() {
             <Container>
             <Grid center columns={3} divided>
                 <Grid.Row>
-                    <AnticipatedGameCard />
+                    {anticipatedGames.map((anticipatedGame) => (
+                     <AnticipatedGameCard 
+                     key={anticipatedGame.id}
+                     anticipatedGame={anticipatedGame}
+                     setAntcipatedGames={setAnticipatedGames}/>   
+                    ))}
                 </Grid.Row>
             </Grid>
             </Container>
