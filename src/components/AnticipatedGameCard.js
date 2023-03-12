@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Card, Grid, Divider, Button, Icon } from 'semantic-ui-react'
 import AnticipatedReview from './AnticipatedReview'
 
-function AnticipatedGameCard({ anticipatedGame, setAnticipatedGames, onUpdateReleaseDate }) {
+function AnticipatedGameCard({ anticipatedGame, setAnticipatedGames, onUpdateReleaseDate, onAddReview }) {
     const { id, image, name, platforms, release_date: releaseDate, reviews } = anticipatedGame
     const [isAnticipatedReview, setIsAnticipatedReview] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
@@ -76,7 +76,7 @@ function AnticipatedGameCard({ anticipatedGame, setAnticipatedGames, onUpdateRel
                     </Card.Description>
                     </Card.Content>
                 )}
-                {isAnticipatedReview ? (<AnticipatedReview anticipatedGame={anticipatedGame} isAnticipatedReview={isAnticipatedReview} setIsAnticipatedReview={setIsAnticipatedReview}/>) : (
+                {isAnticipatedReview ? (<AnticipatedReview anticipatedGame={anticipatedGame} isAnticipatedReview={isAnticipatedReview} setIsAnticipatedReview={setIsAnticipatedReview} onAddReview={onAddReview}/>) : (
                 <Button onClick={() => setIsAnticipatedReview((isAnticipatedReview) => !isAnticipatedReview)}>See Reviews</Button>
                 )}      
             </Card>

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Form, Button, Divider, Segment, Label, List } from 'semantic-ui-react'
+import NewAnticipatedReview from './NewAnticipatedReview'
 
-function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipatedReview }) {
-    const {name, reviews} = anticipatedGame
+function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipatedReview, onAddReview }) {
+    const {name, reviews, id, user_id: userId } = anticipatedGame
+    const [isAdding, setIsAdding] = useState(false)
 
     return (
     <Segment raised>
@@ -18,6 +20,10 @@ function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipa
             </List.Item>
         ))}
         <Button onClick={() => setIsAnticipatedReview((isAnticipatedReview) => !isAnticipatedReview)}>Hide Reviews</Button>
+        {isAdding ? (<NewAnticipatedReview onAddReview={onAddReview} anticipatedGameId={id} userId={userdId}/>) : (
+        <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated right>Add Review</Button>
+        )}
+        
         </List>     
     </Segment>
     )

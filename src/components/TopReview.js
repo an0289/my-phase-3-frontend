@@ -18,6 +18,7 @@ function TopReview({ topGame, istopReview, setIsTopReview }) {
             </List.Item>
         ))}
         <Button onClick={() => setIsTopReview((isTopReview) => !isTopReview)}>Hide Reviews</Button>
+        <Button floated right>Add Review</Button>
         </List>     
     </Segment>
     )

@@ -13,7 +13,6 @@ function App() {
     const [anticipatedGames, setAnticipatedGames] = useState([])
     const [reviews, setReviews] = useState([])
     
-console.log("hey, Im in the app")
     useEffect(() => {
         fetch("http://localhost:9292/top_games")
         .then((r) => r.json())
@@ -42,6 +41,10 @@ console.log("hey, Im in the app")
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
+    function handleAddReview(newReview) {
+        setReviews([...reviews, newReview])
+    }
+
   return (
     <div style={{ backgroundColor: "black" }}>
         <Header style={{ backgroundColor: "black" }} >
@@ -51,10 +54,12 @@ console.log("hey, Im in the app")
         <Switch>
             <Route exact path="/anticipated_games">
                 <AnticipatedGames  anticipatedGames={anticipatedGames} 
-                onUpdateReleaseDate={handleUpdateReleaseDate} />
+                onUpdateReleaseDate={handleUpdateReleaseDate}
+                onAddReview={handleAddReview} />
             </Route>
             <Route exact path="/top_games">
-                <TopGames  topGames={topGames} setTopGames={setTopGames}/>
+                <TopGames  topGames={topGames} setTopGames={setTopGames}
+                onAddReview={handleAddReview}/>
             </Route>
             {/* <Route exact path="/reviews">
                 <ReviewsList reviews={reviews} setReviews={setReviews}/>
