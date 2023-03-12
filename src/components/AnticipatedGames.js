@@ -2,7 +2,9 @@ import React from 'react'
 import { Container, Header, Grid, Image, Search, Divider } from 'semantic-ui-react'
 import AnticipatedGameCard from './AnticipatedGameCard'
 
-function AnticipatedGames({ anticipatedGames, setAnticipatedGames }) {
+function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate }) {
+
+
     return (
         <div style={{ backgroundColor:"white" }}>
         <Divider hidden />
@@ -25,6 +27,7 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames }) {
                      key={anticipatedGame.id}
                      anticipatedGame={anticipatedGame}
                      setAntcipatedGames={setAnticipatedGames}
+                     onUpdateReleaseDate={onUpdateReleaseDate}
                      />   
                     ))}
                 </Grid.Row>

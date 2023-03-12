@@ -2,7 +2,7 @@ import React from 'react'
 import Review from './Review'
 import { Header, Container, Divider } from 'semantic-ui-react'
 
-function ReviewsList() {
+function ReviewsList({ reviews, setReviews }) {
 return (
     <div style={{ backgroundColor:"white" }}>
         <Divider hidden />
@@ -11,9 +11,9 @@ return (
         </Header>
         <Divider hidden />
             <Container>
-                {/* {reviews.map((review) => (
-                <Review key={review.id} topGame={topGame} setTopGames={setTopGames}/>
-                 ))}     */}
+                {reviews.map((review) => (
+                <Review key={review.id} review={review} setReview={setReviews} />
+                 ))}    
             </Container>
         
         </div>
