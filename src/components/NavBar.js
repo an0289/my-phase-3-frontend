@@ -23,11 +23,11 @@ function NavBar() {
                     exact>
                         Top Games of 2022
                 </Button>
-                <Button size="huge" inverted color="violet" as={ NavLink }
+                {/* <Button size="huge" inverted color="violet" as={ NavLink }
                     to="/reviews"
                     exact>
                         Reviews 
-                </Button>
+                </Button> */}
             </Segment>
         </div>
     )

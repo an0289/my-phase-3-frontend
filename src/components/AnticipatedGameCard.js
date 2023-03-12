@@ -76,8 +76,8 @@ function AnticipatedGameCard({ anticipatedGame, setAnticipatedGames, onUpdateRel
                     </Card.Description>
                     </Card.Content>
                 )}
-                {isAnticipatedReview ? (<AnticipatedReview anticipatedGame={anticipatedGame}/>) : (
-                <Button onClick={() => setIsAnticipatedReview((isAnticipatedReview) => !isAnticipatedReview)}>Reviews</Button>
+                {isAnticipatedReview ? (<AnticipatedReview anticipatedGame={anticipatedGame} isAnticipatedReview={isAnticipatedReview} setIsAnticipatedReview={setIsAnticipatedReview}/>) : (
+                <Button onClick={() => setIsAnticipatedReview((isAnticipatedReview) => !isAnticipatedReview)}>See Reviews</Button>
                 )}      
             </Card>
             <Divider />

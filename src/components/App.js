@@ -56,9 +56,9 @@ console.log("hey, Im in the app")
             <Route exact path="/top_games">
                 <TopGames  topGames={topGames} setTopGames={setTopGames}/>
             </Route>
-            <Route exact path="/reviews">
+            {/* <Route exact path="/reviews">
                 <ReviewsList reviews={reviews} setReviews={setReviews}/>
-            </Route>
+            </Route> */}
             <Route exact path="/">
                 <Home />
             </Route>

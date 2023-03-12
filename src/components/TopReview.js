@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Form, Button, Divider, Segment, Label, List } from 'semantic-ui-react'
 
-function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipatedReview }) {
-    const {name, reviews} = anticipatedGame
+function TopReview({ topGame, istopReview, setIsTopReview }) {
+    const {name, reviews} = topGame
 
     return (
     <Segment raised>
@@ -17,7 +17,7 @@ function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipa
             </List.Content>
             </List.Item>
         ))}
-        <Button onClick={() => setIsAnticipatedReview((isAnticipatedReview) => !isAnticipatedReview)}>Hide Reviews</Button>
+        <Button onClick={() => setIsTopReview((isTopReview) => !isTopReview)}>Hide Reviews</Button>
         </List>     
     </Segment>
     )
@@ -29,4 +29,4 @@ function AnticipatedReview({ anticipatedGame, isAnticipatedReview, setIsAnticipa
 
 
 
-export default AnticipatedReview
+export default TopReview

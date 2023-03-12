@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
-import NewTopReview from './NewTopReview'
+import TopReview from './TopReview'
 import { Card, Grid, Divider, Item, Button } from 'semantic-ui-react'
 
 function TopGameCard({ topGame, setTopGames }) {
    
 const { id, image, name, platforms, developers, genre, ranking } = topGame
-const [isReview, setIsReview] = useState(false)
+const [isTopReview, setIsTopReview] = useState(false)
 
 
 
 return (
     <>
-    {isReview ? (
-    <NewTopReview topGame={topGame} setIsReview={setIsReview}/>
-    ) : (
     <Grid.Column>
         <Item.Group>
             <Item>
@@ -31,13 +28,14 @@ return (
                     <Item.Extra>
                     Rank: <span style={{ fontWeight: 'bold' }}>{ranking}</span>
                     </Item.Extra>
-                    <Button onClick={() => setIsReview((isReview) => !isReview)}>Leave A Review</Button>
+                    {isTopReview ? (<TopReview topGame={topGame} isTopReview={isTopReview} setIsTopReview={setIsTopReview}/>) : (
+                    <Button onClick={() => setIsTopReview((isTopReview) => !isTopReview)}>See Reviews</Button>
+                )} 
                 </Item.Content>
             </Item>
         </Item.Group>
         <Divider />
     </Grid.Column>
-     )}
     </>
 
     )
