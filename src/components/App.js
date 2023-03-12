@@ -4,13 +4,14 @@ import { Header } from 'semantic-ui-react'
 import NavBar from './NavBar'
 import TopGames from './TopGames'
 import AnticipatedGames from './AnticipatedGames'
-import Reviews from './Reviews'
+import ReviewsList from './ReviewsList'
 import Home from './Home'
 
 
 function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
+    
 
     useEffect(() => {
         fetch("http://localhost:9292/top_games")
@@ -32,13 +33,13 @@ function App() {
         <div>
         <Switch>
             <Route exact path="/anticipated_games">
-                <AnticipatedGames anticipatedGames={anticipatedGames} setAnticipatedGames={setAnticipatedGames} />
+                <AnticipatedGames  anticipatedGames={anticipatedGames} setAnticipatedGames={setAnticipatedGames} />
             </Route>
             <Route exact path="/top_games">
-                <TopGames topGames={topGames} setTopGames={setTopGames}/>
+                <TopGames  topGames={topGames} setTopGames={setTopGames}/>
             </Route>
             <Route exact path="/reviews">
-                <Reviews />
+                <ReviewsList />
             </Route>
             <Route exact path="/">
                 <Home />

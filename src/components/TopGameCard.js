@@ -1,11 +1,19 @@
-import React from 'react'
-import { Card, Grid, Divider, Item, Container } from 'semantic-ui-react'
+import React, { useState } from 'react'
+import NewTopReview from './NewTopReview'
+import { Card, Grid, Divider, Item, Button } from 'semantic-ui-react'
 
 function TopGameCard({ topGame, setTopGames }) {
    
 const { id, image, name, platforms, developers, genre, ranking } = topGame
+const [isReview, setIsReview] = useState(false)
+
+
+
 return (
     <>
+    {isReview ? (
+    <NewTopReview topGame={topGame} setIsReview={setIsReview}/>
+    ) : (
     <Grid.Column>
         <Item.Group>
             <Item>
@@ -23,36 +31,13 @@ return (
                     <Item.Extra>
                     Rank: <span style={{ fontWeight: 'bold' }}>{ranking}</span>
                     </Item.Extra>
-                    <Item.Meta>Leave A Review</Item.Meta>
+                    <Button onClick={() => setIsReview((isReview) => !isReview)}>Leave A Review</Button>
                 </Item.Content>
             </Item>
         </Item.Group>
-        {/* <Card key={id} color="black">
-            <img src={image} height={300} />
-            <Card.Content>
-                {developers}
-            <Card.Header as='h1'>
-                {name}
-            </Card.Header>
-            <Card.Meta>
-            <span style={{ fontWeight: 'bold' }}>Genre:</span> {genre}
-            </Card.Meta>
-            <Card.Meta>
-            <span style={{ fontWeight: 'bold' }}>Platforms:</span> {platforms}
-            </Card.Meta>
-            <Card.Description>
-                A brief synopsis about each game
-            </Card.Description>
-            <Card.Description>
-                <span style={{ fontWeight: 'bold' }}>Rank:</span> {ranking}
-            </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-                Leave a Review 
-            </Card.Content>
-        </Card> */}
         <Divider />
     </Grid.Column>
+     )}
     </>
 
     )

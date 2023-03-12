@@ -21,7 +21,8 @@ return (
         {/* <Grid center rows divided>
             <Grid.Row> */}
                 {topGames.map((topGame) => (
-                <TopGameCard key={topGames.id} topGame={topGame} setTopGames={setTopGames}/>
+                <TopGameCard key={topGame.id} topGame={topGame} setTopGames={setTopGames}
+                />
                 ))}    
             {/* </Grid.Row>
         </Grid> */}

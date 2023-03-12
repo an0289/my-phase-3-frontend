@@ -24,7 +24,8 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames }) {
                      <AnticipatedGameCard 
                      key={anticipatedGame.id}
                      anticipatedGame={anticipatedGame}
-                     setAntcipatedGames={setAnticipatedGames}/>   
+                     setAntcipatedGames={setAnticipatedGames}
+                     />   
                     ))}
                 </Grid.Row>
             </Grid>
