@@ -3,16 +3,24 @@ import { Card, Grid, Divider, Button, Icon, Feed, List, Segment } from 'semantic
 import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
 function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate }) {
-    const { id, image, name, platforms, release_date: releaseDate, reviews } = anticipatedGame
-
+    
+    const { name, image, id, platforms, release_date: releaseDate } = anticipatedGame 
+    const [game, setGame] = useState()
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
     const [changeDate, setChangeDate] = useState("")
     
 
+
     useEffect(() =>{
         setChangeDate(anticipatedGame)
     }, [anticipatedGame])
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:9292/anticipated_games/${id}`)
+    //     .then((r) => r.json())
+    //     .then((game) => setGame(game))
+    // }, [id])
 
 
     function handleEditDateSubmit(e) {
@@ -87,7 +95,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate }) {
                     </Card.Content>     
                 )}
                 {isSeeingReviews ? (
-                <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} reviews={reviews}/>) : (
+                <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} />) : (
                 <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button> )}
             </Card>
             <Divider />

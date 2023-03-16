@@ -4,9 +4,8 @@ import AnticipatedGameReview from './AnticipatedGameReview'
 
 
 function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeeingReviews }) {
-    
-    const {name, id, reviews } = anticipatedGame
 
+    const { name, reviews } = anticipatedGame
     // function handleDeleteClick() {
     //     fetch(`http://localhost:9292/reviews/${id}`, {
     //         method: "DELETE"
@@ -19,9 +18,9 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
     <Segment raised>
     <Label size="large" color="black" ribbon>{name} Reviews </Label>
     {reviews.map((review) => (
-    <AnticipatedGameReview 
-            review={review}/>
-     ))}
+    <AnticipatedGameReview review={review} />
+    ))}
+    
     <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button> 
     </Segment>
     )
