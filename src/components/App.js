@@ -4,7 +4,6 @@ import { Header } from 'semantic-ui-react'
 import NavBar from './NavBar'
 import TopGames from './TopGames'
 import AnticipatedGames from './AnticipatedGames'
-import ReviewsList from './ReviewsList'
 import Home from './Home'
 
 
@@ -12,6 +11,7 @@ function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
     const [reviews, setReviews] = useState([])
+    
     
     useEffect(() => {
         fetch("http://localhost:9292/top_games")
@@ -45,6 +45,13 @@ function App() {
         setReviews([...reviews, newReview])
     }
 
+    function handleDeleteReview(id) {
+        const updatedReviews = reviews.map((review) => {
+            setReviews(updatedReviews)
+        })
+    }
+
+
   return (
     <div style={{ backgroundColor: "black" }}>
         <Header style={{ backgroundColor: "black" }} >
@@ -55,15 +62,14 @@ function App() {
             <Route exact path="/anticipated_games">
                 <AnticipatedGames  anticipatedGames={anticipatedGames} 
                 onUpdateReleaseDate={handleUpdateReleaseDate}
-                onAddReview={handleAddReview} />
+                onAddReview={handleAddReview}
+                onDeleteReview={handleDeleteReview}
+                 />
             </Route>
             <Route exact path="/top_games">
                 <TopGames  topGames={topGames} setTopGames={setTopGames}
                 onAddReview={handleAddReview}/>
             </Route>
-            {/* <Route exact path="/reviews">
-                <ReviewsList reviews={reviews} setReviews={setReviews}/>
-            </Route> */}
             <Route exact path="/">
                 <Home />
             </Route>
