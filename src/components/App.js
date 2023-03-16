@@ -12,6 +12,7 @@ function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
     const [reviews, setReviews] = useState([])
+    const [searchWord, setSearchWord] = useState("")
     
     
     
@@ -71,6 +72,8 @@ function App() {
                 onUpdateReleaseDate={handleUpdateReleaseDate}
                 onAddReview={handleAddReview}
                 onDeleteReview={handleDeleteReview}
+                searchWord={searchWord}
+                setSearchWord={setSearchWord}
                  />
             </Route>
             <Route exact path="/top_games">
