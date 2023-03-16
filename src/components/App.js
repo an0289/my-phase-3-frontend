@@ -59,6 +59,17 @@ function App() {
         setReviews(updatedReviews);
       }
 
+    function handleUpdateReview(updatedReview) {
+        const updatedReviews = reviews.map((review) => {
+            if(review.id === updatedReview.id) {
+                return updatedReview
+            }
+            return review
+        })
+        setReviews(updatedReviews)
+    }
+
+
 
   return (
     <div style={{ backgroundColor: "black" }}>
@@ -74,6 +85,7 @@ function App() {
                 onDeleteReview={handleDeleteReview}
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
+                onUpdateReview={handleUpdateReview}
                  />
             </Route>
             <Route exact path="/top_games">

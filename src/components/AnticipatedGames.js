@@ -3,7 +3,7 @@ import { Container, Header, Grid, Image, Search, Divider } from 'semantic-ui-rea
 import AnticipatedGameCard from './AnticipatedGameCard'
 
 
-function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord }) {
+function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview }) {
     const anticipatedGamesToDisplay = anticipatedGames.filter((anticipatedGame) => {
         if(searchWord === "") return true;
         return anticipatedGame.name.toLowerCase().includes(searchWord.toLowerCase())
@@ -12,12 +12,12 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
     return (
         <div style={{ backgroundColor:"white" }}>
         <Divider hidden />
-        <Header style={{ fontFamily:"Impact" }} as='h1' icon textAlign='center'>
+        <Header style={{ fontFamily:"Impact" }} as='h1'  textAlign='center'>
             Most Anticipated Games of 2023
         </Header>
         <Container style={{ paddingLeft:460}}>
             <Search
-                size="medium"
+                size="large"
                 type="text"
                 placeholder="Search Games"
                 value={searchWord}
@@ -36,7 +36,7 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
                      onUpdateReleaseDate={onUpdateReleaseDate}
                      onAddReview={onAddReview}
                      onDeleteReview={onDeleteReview}
-                      />   
+                      onUpdateReview={onUpdateReview}/>   
                      ))} 
                 </Grid.Row>
             </Grid>

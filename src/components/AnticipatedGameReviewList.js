@@ -4,7 +4,7 @@ import AnticipatedGameReview from './AnticipatedGameReview'
 import NewAnticipatedGameReview from './NewAnticipatedGameReview'
 
 
-function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeeingReviews, onAddReview, onDeleteReview }) {
+function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeeingReviews, onAddReview, onDeleteReview, onUpdateReview }) {
 
     const { name, id, reviews } = anticipatedGame
     
@@ -12,9 +12,8 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
 
     return (
     <Segment raised>
-    <Label size="large" color="black" ribbon>{name} Reviews </Label>
     {reviews.map((review) => (
-    <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview}/>
+    <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview/>
     ))}
     
     <Button floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
