@@ -2,25 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { Card, Grid, Divider, Button, Icon, Feed, List, Segment } from 'semantic-ui-react'
 import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
-function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate }) {
+function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview }) {
     
     const { name, image, id, platforms, release_date: releaseDate } = anticipatedGame 
-    const [game, setGame] = useState()
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
     const [changeDate, setChangeDate] = useState("")
+    const [reviews, setReviews] = useState([])
+    
     
 
+   
 
     useEffect(() =>{
         setChangeDate(anticipatedGame)
     }, [anticipatedGame])
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:9292/anticipated_games/${id}`)
-    //     .then((r) => r.json())
-    //     .then((game) => setGame(game))
-    // }, [id])
 
 
     function handleEditDateSubmit(e) {
@@ -39,14 +35,6 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate }) {
             .then((updatedAnticipatedGame) => onUpdateReleaseDate(updatedAnticipatedGame))
         
     }
-
-    // function handleDeleteClick() {
-    //         fetch(`http://localhost:9292/reviews/${id}`, {
-    //             method: "DELETE"
-    //         })
-    
-    //         onDeleteReview(id)
-    //     }
 
     return (
         <>
@@ -95,7 +83,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate }) {
                     </Card.Content>     
                 )}
                 {isSeeingReviews ? (
-                <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} />) : (
+                <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} onAddReview={onAddReview} onDeleteReview={onDeleteReview} />) : (
                 <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button> )}
             </Card>
             <Divider />
