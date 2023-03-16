@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Header, Grid, Image, Search, Divider } from 'semantic-ui-react'
 import AnticipatedGameCard from './AnticipatedGameCard'
+import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
 function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview }) {
 
@@ -30,7 +31,7 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
                      onUpdateReleaseDate={onUpdateReleaseDate}
                      onAddReview={onAddReview}
                      onDeleteReview={onDeleteReview} />   
-                    ))}
+                     ))} 
                 </Grid.Row>
             </Grid>
             </Container>

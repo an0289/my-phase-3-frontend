@@ -5,12 +5,13 @@ import NavBar from './NavBar'
 import TopGames from './TopGames'
 import AnticipatedGames from './AnticipatedGames'
 import Home from './Home'
+import AnticipatedReview from './AnticipatedGameReviewList'
 
 
 function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
-    const [reviews, setReviews] = useState([])
+    // const [reviews, setReviews] = useState([])
     
     
     useEffect(() => {
@@ -25,11 +26,11 @@ function App() {
         .then((anticipatedGames) => setAnticipatedGames(anticipatedGames))
     }, [])
 
-    useEffect(() => {
-        fetch("http://localhost:9292/reviews")
-        .then((r) => r.json())
-        .then((reviews) => setReviews(reviews))
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:9292/reviews")
+    //     .then((r) => r.json())
+    //     .then((reviews) => setReviews(reviews))
+    // }, [])
 
     function handleUpdateReleaseDate(updatedAnticipatedGame) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
@@ -41,15 +42,15 @@ function App() {
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
-    function handleAddReview(newReview) {
-        setReviews([...reviews, newReview])
-    }
+    // function handleAddReview(newReview) {
+    //     setReviews([...reviews, newReview])
+    // }
 
-    function handleDeleteReview(id) {
-        const updatedReviews = reviews.map((review) => {
-            setReviews(updatedReviews)
-        })
-    }
+    // function handleDeleteReview(id) {
+    //     const updatedReviews = reviews.map((review) => {
+    //         setReviews(updatedReviews)
+    //     })
+    // }
 
 
   return (
@@ -62,13 +63,11 @@ function App() {
             <Route exact path="/anticipated_games">
                 <AnticipatedGames  anticipatedGames={anticipatedGames} 
                 onUpdateReleaseDate={handleUpdateReleaseDate}
-                onAddReview={handleAddReview}
-                onDeleteReview={handleDeleteReview}
                  />
             </Route>
             <Route exact path="/top_games">
                 <TopGames  topGames={topGames} setTopGames={setTopGames}
-                onAddReview={handleAddReview}/>
+                />
             </Route>
             <Route exact path="/">
                 <Home />
