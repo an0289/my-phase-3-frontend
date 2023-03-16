@@ -24,13 +24,19 @@ function App() {
     useEffect(() => {
         fetch("http://localhost:9292/anticipated_games")
         .then((r) => r.json())
-        .then((anticipatedGames) => setAnticipatedGames(anticipatedGames))
+        .then((anticipatedGames) => {
+            setAnticipatedGames(anticipatedGames)
+            console.log(anticipatedGames)
+        })
     }, [])
 
     useEffect(() => {
         fetch("http://localhost:9292/reviews")
         .then((r) => r.json())
-        .then((reviews) => setReviews(reviews))
+        .then((reviews) => {
+            setReviews(reviews)
+            console.log(reviews)
+        })
     }, [])
 
     function handleUpdateReleaseDate(updatedAnticipatedGame) {

@@ -4,19 +4,20 @@ import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
 function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview }) {
     
-    const { name, image, id, platforms, release_date: releaseDate } = anticipatedGame 
+    const { name, image, id, platforms, release_date: releaseDate, reviews } = anticipatedGame 
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
     const [changeDate, setChangeDate] = useState("")
-    const [reviews, setReviews] = useState([])
+    
     
     
 
    
 
-    useEffect(() =>{
-        setChangeDate(anticipatedGame)
-    }, [anticipatedGame])
+    // useEffect(() =>{
+    //     setChangeDate(anticipatedGame)
+    //     // console.log(reviews)
+    // }, [anticipatedGame])
 
 
     function handleEditDateSubmit(e) {
@@ -85,6 +86,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                 {isSeeingReviews ? (
                 <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} onAddReview={onAddReview} onDeleteReview={onDeleteReview} />) : (
                 <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button> )}
+                {/* <Button onClick={() => console.log(reviews)}>Test</Button> */}
             </Card>
             <Divider />
         </Grid.Column>

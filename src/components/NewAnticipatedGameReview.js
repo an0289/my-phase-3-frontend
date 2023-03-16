@@ -9,6 +9,7 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
     function handleSubmit(e) {
         e.preventDefault()
         setIsAdding(false)
+        console.log('submitted')
 
         fetch("http://localhost:9292/reviews", {
             method: "POST",
@@ -23,9 +24,8 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
         })
           .then((r) => r.json())
           .then((newReview) => {
-            onAddReview(newReview)
-            setUsername("")
-            setComment("")
+            onAddReview(newReview, console.log('am I working?'))
+            console.log(newReview)
           })
     }
 

@@ -6,7 +6,8 @@ import NewAnticipatedGameReview from './NewAnticipatedGameReview'
 
 function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeeingReviews, onAddReview, onDeleteReview }) {
 
-    const { name, reviews, id } = anticipatedGame
+    const { name, id, reviews } = anticipatedGame
+    
     const [isAdding, setIsAdding] = useState(false)
 
     return (
@@ -19,7 +20,7 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
     <Button floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
     {isAdding ? (<NewAnticipatedGameReview anticipatedGameId={id}setIsAdding={setIsAdding} onAddReview={onAddReview} />) : (
     <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated right>Add Review</Button>
-    )} 
+    )}
     
     </Segment>
     )
