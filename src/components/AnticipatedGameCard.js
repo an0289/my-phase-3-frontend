@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Grid, Divider, Button, Icon, Feed, List, Segment } from 'semantic-ui-react'
+import { Card, Grid, Divider, Button, Icon, Feed, List, Segment, Form } from 'semantic-ui-react'
 import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
 function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview, onUpdateReview }) {
@@ -44,7 +44,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                 <img src={image} height={230} />
                 {isEdit ? (
                 <Card.Content>
-                <form onSubmit={handleEditDateSubmit}>
+                <Form onSubmit={handleEditDateSubmit}>
                 Release Date: <span style={{ fontWeight: 'bold' }}>
                     <input 
                     onChange={(e) => setChangeDate(e.target.value)}
@@ -53,8 +53,8 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                     value={changeDate.releaseDate}
                     placeholder={releaseDate} />
                 </span>
-                <input type="submit" value="Save" />   
-                </form>
+                <Button size="small" type="submit">Save</Button>  
+                </Form>
                 <Button size="tiny" icon floated="right"
                     circular basic color="grey" onClick={() => setIsEdit((isEdit) => !isEdit)}>
                         <Icon name="edit" />

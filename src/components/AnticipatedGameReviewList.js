@@ -12,10 +12,11 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
 
     return (
     <Segment raised>
+    <List divided relaxed>
     {reviews.map((review) => (
     <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview/>
     ))}
-    
+    </List>
     <Button floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
     {isAdding ? (<NewAnticipatedGameReview anticipatedGameId={id}setIsAdding={setIsAdding} onAddReview={onAddReview} />) : (
     <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated right>Add Review</Button>

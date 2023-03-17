@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { List, Button, Icon, Label, Image } from 'semantic-ui-react'
+import { List, Button, Icon, Label, Image, Form } from 'semantic-ui-react'
 
 function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) {
     const { id, username, avatar, comment, score, created_at: createdAt, updated_at: updatedAt } = review 
@@ -44,14 +44,14 @@ function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) 
     }
 
     return (
-        <List key={id} divided relaxed="very">
+        <>
             {isEditing ? (
-            <List.Item>
+            <List.Item key={id}>
                 {imgSrc ? (<Image avatar src={imgSrc}  />) : (<Image avatar src="https://p.kindpng.com/picc/s/22-223965_no-profile-picture-icon-circle-member-icon-png.png"  />)}
                 <List.Content>
                 <List.Header as='a'>{username}</List.Header>
+                    <Form onSubmit={handleEditReviewSubmit}>
                     <List.Description style={{ fontWeight: 'bold' }}>
-                    <form onSubmit={handleEditReviewSubmit}>
                           <input 
                           onChange={(e) => setReviewScore(e.target.value)}
                           type="text"
@@ -59,10 +59,8 @@ function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) 
                           value={reviewScore.score}
                           placeholder={score}
                           />  
-                        </form>
                     </List.Description>
                     <List.Description as='a'>
-                        <form onSubmit={handleEditReviewSubmit}>
                           <input 
                           onChange={(e) => setReviewComment(e.target.value)}
                           type="text"
@@ -70,16 +68,16 @@ function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) 
                           value={reviewComment.comment}
                           placeholder={comment}
                           />  
-                          <input type="submit" value="Save" /> 
-                        </form>
                     </List.Description>
+                    <Button type='submit'>Save</Button>
+                    </Form>
                 </List.Content>
                 <Button onClick={(e) => setIsEditing((isEditing) => !isEditing)} size='mini' icon floated="right">
                     <Icon name='edit' />
                 </Button>
             </List.Item>
             ) : (
-            <List.Item>
+            <List.Item key={id}>
                  {imgSrc ? (<Image avatar src={imgSrc}  />) : (<Image avatar src="https://p.kindpng.com/picc/s/22-223965_no-profile-picture-icon-circle-member-icon-png.png"  />)}
                 <List.Content>
                 <List.Header as='a'>{username}</List.Header>
@@ -96,7 +94,7 @@ function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) 
                 </Button>
             </List.Item>
             )}
-        </List>
+        </>
     )     
 }
 
