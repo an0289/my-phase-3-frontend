@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Header, Grid, Image, Search, Divider, Segment } from 'semantic-ui-react'
 import AnticipatedGameCard from './AnticipatedGameCard'
 
@@ -6,10 +6,14 @@ import AnticipatedGameCard from './AnticipatedGameCard'
 
 
 function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview }) {
+    console.log('what is anticipatedgames', anticipatedGames)
     const anticipatedGamesToDisplay = anticipatedGames.filter((anticipatedGame) => {
         if(searchWord === "") return true;
         return anticipatedGame.name.toLowerCase().includes(searchWord.toLowerCase())
     })
+
+    
+
 
     return (
         <div style={{background: "white" }}>

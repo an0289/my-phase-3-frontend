@@ -10,9 +10,10 @@ import Home from './Home'
 
 function App() {
     const [topGames, setTopGames] = useState([])
-    const [anticipatedGames, setAnticipatedGames] = useState([])
-    const [reviews, setReviews] = useState([])
+    const [anticipatedGames, setAnticipatedGames] = useState()
+    // const [currentGame, setCurrentGame] = useState([{reviews: []}])
     const [searchWord, setSearchWord] = useState("")
+    
     
     
     
@@ -31,14 +32,6 @@ function App() {
         })
     }, [])
 
-    useEffect(() => {
-        fetch("http://localhost:9292/reviews")
-        .then((r) => r.json())
-        .then((reviews) => {
-            setReviews(reviews)
-            console.log(reviews)
-        })
-    }, [])
 
     function handleUpdateReleaseDate(updatedAnticipatedGame) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
@@ -46,27 +39,35 @@ function App() {
                 return updatedAnticipatedGame
             }
             return anticipatedGame
+            
         })
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
-    function handleAddReview(newReview) {
-        setReviews([...reviews, newReview])
+    function handleAddReview(review) {
+        const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
+            if(anticipatedGame.id === review.anticipated_game_id) {
+                const newReviews = [...anticipatedGame.reviews, review]
+                anticipatedGame.reviews = newReviews
+            } 
+                return anticipatedGame 
+        })  
+        setAnticipatedGames(updatedAnticipatedGames)
     }
 
     function handleDeleteReview(id) {
-        const updatedReviews = reviews.filter((review) => review.id !== id);
-        setReviews(updatedReviews);
+        const updatedReviews = anticipatedGames.filter((review) => review.id !== id);
+        setAnticipatedGames(updatedReviews);
       }
 
     function handleUpdateReview(updatedReview) {
-        const updatedReviews = reviews.map((review) => {
-            if(review.id === updatedReview.id) {
-                return updatedReview
-            }
-            return review
-        })
-        setReviews(updatedReviews)
+        // const updatedReviews = reviews.map((review) => {
+        //     if(review.id === updatedReview.id) {
+        //         return updatedReview
+        //     }
+        //     return review
+        // })
+        // setReviews(updatedReviews)
     }
 
 
