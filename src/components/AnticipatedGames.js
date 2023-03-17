@@ -4,6 +4,7 @@ import AnticipatedGameCard from './AnticipatedGameCard'
 
 
 
+
 function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview }) {
     const anticipatedGamesToDisplay = anticipatedGames.filter((anticipatedGame) => {
         if(searchWord === "") return true;
@@ -11,10 +12,10 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
     })
 
     return (
-        <div style={{ backgroundColor:"white"}}>
+        <div style={{background: "white" }}>
         <Divider hidden />
         <Container style={{ paddingLeft:335, paddingTop: 30}}>
-        <Segment inverted raised circular  >
+        <Segment  inverted raised circular  >
             <Header style={{ fontFamily:"Arial"}}as="h1">
                 Most Anticipated Games of 2023
             </Header>

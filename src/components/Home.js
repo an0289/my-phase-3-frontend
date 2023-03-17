@@ -7,13 +7,13 @@ function Home() {
     return (
         <div style={{ backgroundColor:"black", backgroundImage: `url(${Background})`,backgroundSize:"cover", backgroundRepeat:"no-repeat", height:"89vh"}} >
             <Divider hidden />
-            <Container style={{ paddingLeft:300, paddingTop: 150}}>
+            <Container style={{ paddingLeft:340, paddingTop: 150}}>
                 <Segment  raised circular style={{ height:500, width: 500}}>
                     <Header style={{ fontFamily:"Lucida Handwriting"}}as="h1">
                         Hello, there!
                     </Header>
                     <Header as="h2">
-                        Check out some of the most anticipated games set to come out this year in 2023. And, while you're at it, go take a peak at the top 10 games of 2022
+                        Check out some of the most anticipated games set to come out this year in 2023! And, while you're at it, go take a peak at the top 10 games of 2022
                     </Header>
                     <Header style={{ fontStyle:"italic" }} as="h3">
                         Feel free to leave reviews on any of the games listed that you have played 
