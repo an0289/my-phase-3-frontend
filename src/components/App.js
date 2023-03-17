@@ -90,7 +90,9 @@ function App() {
             </Route>
             <Route exact path="/top_games">
                 <TopGames  topGames={topGames} setTopGames={setTopGames}
-                />
+                onAddReview={handleAddReview}
+                onDeleteReview={handleDeleteReview}
+                onUpdateReview={handleUpdateReview}/>
             </Route>
             <Route exact path="/">
                 <Home />

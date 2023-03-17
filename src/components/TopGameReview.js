@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { List, Button, Icon, Label, Image } from 'semantic-ui-react'
 
-function AnticipatedGameReview({ review, onDeleteReview, onUpdateReview }) {
-
+function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) {
     const { id, username, avatar, comment, score, created_at: createdAt, updated_at: updatedAt } = review 
 
     const [isEditing, setIsEditing] = useState(false)
@@ -101,4 +100,4 @@ function AnticipatedGameReview({ review, onDeleteReview, onUpdateReview }) {
     )     
 }
 
-export default AnticipatedGameReview
+export default TopGameReview

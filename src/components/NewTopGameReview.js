@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { List, Form, Button } from 'semantic-ui-react'
 
-function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding }) {
 
+function NewTopGameReview({ setIsAdding, onAddReview, topGameId }) {
     const [username, setUsername] = useState("")
     const [comment, setComment] = useState("")
     const [avatar, setAvatar] = useState("")
@@ -23,7 +23,7 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
                 comment: comment,
                 avatar: avatar,
                 score: score,
-                anticipated_game_id: anticipatedGameId
+                top_game_id: topGameId
             }),
         })
           .then((r) => r.json())
@@ -78,4 +78,4 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
     )     
 }
 
-export default NewAnticipatedGameReview
+export default NewTopGameReview

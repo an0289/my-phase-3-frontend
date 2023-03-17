@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import TopReview from './TopReview'
+import TopGameReviewList from './TopGameReviewList'
 import { Card, Grid, Divider, Item, Button } from 'semantic-ui-react'
 
-function TopGameCard({ topGame, setTopGames }) {
+function TopGameCard({ topGame, onAddReview, onDeleteReview, onUpdateReview }) {
    
-const { id, image, name, platforms, developers, genre, ranking } = topGame
-const [isTopReview, setIsTopReview] = useState(false)
+    const { name, image, id, platforms, developers, genre, ranking, reviews } = topGame 
+    const [isSeeingReviews, setIsSeeingReviews] = useState(false)
+    const [changeDate, setChangeDate] = useState("")
 
 
 
@@ -28,8 +29,10 @@ return (
                     <Item.Extra>
                     Rank: <span style={{ fontWeight: 'bold' }}>{ranking}</span>
                     </Item.Extra>
-                    {isTopReview ? (<TopReview topGame={topGame} isTopReview={isTopReview} setIsTopReview={setIsTopReview}/>) : (
-                    <Button onClick={() => setIsTopReview((isTopReview) => !isTopReview)}>See Reviews</Button>
+                    {isSeeingReviews ? (<TopGameReviewList topGame={topGame} 
+                    onAddReview={onAddReview} onUpdateReview={onUpdateReview} onDeleteReview={onDeleteReview}
+                    isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews}/>) : (
+                    <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button>
                 )} 
                 </Item.Content>
             </Item>

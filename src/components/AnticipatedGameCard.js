@@ -51,10 +51,14 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                     type="text"
                     name="releaseDate"
                     value={changeDate.releaseDate}
-                    placeholder="Release Date" />
+                    placeholder={releaseDate} />
                 </span>
                 <input type="submit" value="Save" />   
                 </form>
+                <Button size="tiny" icon floated="right"
+                    circular basic color="grey" onClick={() => setIsEdit((isEdit) => !isEdit)}>
+                        <Icon name="edit" />
+                    </Button>
                 <Card.Header as='h1'>
                     {name}
                 </Card.Header>
@@ -68,8 +72,8 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                 ) : (
                 <Card.Content>
                     Release Date: <span style={{ fontWeight: 'bold' }}>{releaseDate}</span> 
-                    <Button icon floated="right"
-                    cicular basic color="grey" onClick={() => setIsEdit((isEdit) => !isEdit)}>
+                    <Button size="tiny" icon floated="right"
+                    circular basic color="grey" onClick={() => setIsEdit((isEdit) => !isEdit)}>
                         <Icon name="edit" />
                     </Button>  
                     <Card.Header as='h1'>
