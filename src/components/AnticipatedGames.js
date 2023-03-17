@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Header, Grid, Image, Search, Divider } from 'semantic-ui-react'
+import { Container, Header, Grid, Image, Search, Divider, Segment } from 'semantic-ui-react'
 import AnticipatedGameCard from './AnticipatedGameCard'
+
 
 
 function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview }) {
@@ -10,12 +11,17 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
     })
 
     return (
-        <div style={{ backgroundColor:"white" }}>
+        <div style={{ backgroundColor:"white"}}>
         <Divider hidden />
-        <Header style={{ fontFamily:"Impact" }} as='h1'  textAlign='center'>
-            Most Anticipated Games of 2023
-        </Header>
-        <Container style={{ paddingLeft:460}}>
+        <Container style={{ paddingLeft:335, paddingTop: 30}}>
+        <Segment inverted raised circular  >
+            <Header style={{ fontFamily:"Arial"}}as="h1">
+                Most Anticipated Games of 2023
+            </Header>
+        </Segment>
+            <Divider hidden />
+        </Container>
+        <Container style={{ paddingLeft:480}}>
             <Search
                 size="large"
                 type="text"

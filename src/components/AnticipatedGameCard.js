@@ -40,7 +40,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
     return (
         <>
         <Grid.Column>
-            <Card key={id} color="black">
+            <Card color="black" key={id} >
                 <img src={image} height={230} />
                 {isEdit ? (
                 <Card.Content>
@@ -82,14 +82,14 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                     <Card.Meta>
                     <span style={{ fontWeight: 'bold' }}>Platforms:</span> {platforms}
                     </Card.Meta>
-                    <Card.Description>
-                        A brief synopsis about each game
+                    <Card.Description as='a'>
+                        Click here to learn more about this game
                     </Card.Description>
                     </Card.Content>     
                 )}
                 {isSeeingReviews ? (
                 <AnticipatedGameReviewList anticipatedGame={anticipatedGame} isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews} onAddReview={onAddReview} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview} />) : (
-                <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button> )}
+                <Button color="black" onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button> )}
                 {/* <Button onClick={() => console.log(reviews)}>Test</Button> */}
             </Card>
             <Divider />

@@ -1,21 +1,22 @@
 import React from 'react'
 import {Container, Segment, Header, Grid, Image, Card, Button, Icon, Divider, Label, Form, TextArea } from 'semantic-ui-react'
+import Background from "../assets/pexels-lucie-liz-3165335.jpg"
 
 function Home() {
 
     return (
-        <div style={{ backgroundColor:"white", backgroundImage: `url(${Bar})`,backgroundSize:"cover", backgroundRepeat:"no-repeat", height:"100vh"}} >
+        <div style={{ backgroundColor:"black", backgroundImage: `url(${Background})`,backgroundSize:"cover", backgroundRepeat:"no-repeat", height:"89vh"}} >
             <Divider hidden />
             <Container style={{ paddingLeft:300, paddingTop: 150}}>
-                <Segment raised circular style={{ height:500, width: 500}}>
+                <Segment  raised circular style={{ height:500, width: 500}}>
                     <Header style={{ fontFamily:"Lucida Handwriting"}}as="h1">
-                        Welcome!
+                        Hello, there!
                     </Header>
                     <Header as="h2">
-                        Click on the "Bars" or "Breweries" button to browse some of Austin's most popular bars and breweries
+                        Check out some of the most anticipated games set to come out this year in 2023. And, while you're at it, go take a peak at the top 10 games of 2022
                     </Header>
-                    <Header style={{ fontStyle:"italic" }} as="h4">
-                        Pssst: Do you have an honorable mention that you feel should be included? Feel free to add it on the "Add New" page
+                    <Header style={{ fontStyle:"italic" }} as="h3">
+                        Feel free to leave reviews on any of the games listed that you have played 
                     </Header>
                 </Segment>
                 

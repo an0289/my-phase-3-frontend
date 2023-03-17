@@ -29,10 +29,11 @@ return (
                     <Item.Extra>
                     Rank: <span style={{ fontWeight: 'bold' }}>{ranking}</span>
                     </Item.Extra>
+                    <Divider hidden />
                     {isSeeingReviews ? (<TopGameReviewList topGame={topGame} 
                     onAddReview={onAddReview} onUpdateReview={onUpdateReview} onDeleteReview={onDeleteReview}
                     isSeeingReviews={isSeeingReviews} setIsSeeingReviews={setIsSeeingReviews}/>) : (
-                    <Button onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button>
+                    <Button color="black" onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>See Reviews</Button>
                 )} 
                 </Item.Content>
             </Item>
