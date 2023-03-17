@@ -4,7 +4,7 @@ import { Card, Grid, Divider, Item, Button } from 'semantic-ui-react'
 
 function TopGameCard({ topGame, onAddReview, onDeleteReview, onUpdateReview }) {
    
-    const { name, image, id, platforms, developers, genre, ranking, reviews } = topGame 
+    const { name, image, id, platforms, developers, genre, ranking, website } = topGame 
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
     const [changeDate, setChangeDate] = useState("")
 
@@ -19,7 +19,7 @@ return (
                 <Item.Content>
                     <Item.Header as='a'>{name}</Item.Header>
                     <Item.Meta>{developers}</Item.Meta>
-                    <Item.Description>Brief Synopsis of Game</Item.Description>
+                    <Item.Description style={{ fontWeight: 'bold' }} as='a' href={website}>Click here to learn more about this game</Item.Description>
                     <Item.Extra>
                     Platforms: <span style={{ fontWeight: 'bold' }}>{platforms}</span>
                     </Item.Extra>

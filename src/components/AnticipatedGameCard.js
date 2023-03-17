@@ -4,7 +4,7 @@ import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
 function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview, onUpdateReview }) {
     
-    const { name, image, id, platforms, release_date: releaseDate, reviews } = anticipatedGame 
+    const { name, image, id, platforms, release_date: releaseDate, website } = anticipatedGame 
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
     const [changeDate, setChangeDate] = useState("")
@@ -65,8 +65,8 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                 <Card.Meta>
                 <span style={{ fontWeight: 'bold' }}>Platforms:</span> {platforms}
                 </Card.Meta>
-                <Card.Description>
-                    A brief synopsis about each game
+                <Card.Description style={{ fontWeight: 'bold' }}as='a' href={website}>
+                Click here to learn more about this game
                 </Card.Description>
                 </Card.Content>
                 ) : (
@@ -82,7 +82,7 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                     <Card.Meta>
                     <span style={{ fontWeight: 'bold' }}>Platforms:</span> {platforms}
                     </Card.Meta>
-                    <Card.Description as='a'>
+                    <Card.Description style={{ fontWeight: 'bold' }} as='a' href={website}>
                         Click here to learn more about this game
                     </Card.Description>
                     </Card.Content>     
