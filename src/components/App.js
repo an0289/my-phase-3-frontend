@@ -10,7 +10,7 @@ import Home from './Home'
 
 function App() {
     const [topGames, setTopGames] = useState([])
-    const [anticipatedGames, setAnticipatedGames] = useState()
+    const [anticipatedGames, setAnticipatedGames] = useState([])
     // const [currentGame, setCurrentGame] = useState([{reviews: []}])
     const [searchWord, setSearchWord] = useState("")
     
@@ -55,19 +55,27 @@ function App() {
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
-    function handleDeleteReview(id) {
-        const updatedReviews = anticipatedGames.filter((review) => review.id !== id);
-        setAnticipatedGames(updatedReviews);
+    function handleDeleteReview(review) {
+        const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
+            if(anticipatedGame.id === review.anticipated_game_id) {
+                const updatedReviewList = anticipatedGame.reviews.filter((rev) => rev.id !== review.id)
+                anticipatedGame.reviews = updatedReviewList
+            }
+                return anticipatedGame
+        })
+        setAnticipatedGames(updatedAnticipatedGames)
       }
 
     function handleUpdateReview(updatedReview) {
-        // const updatedReviews = reviews.map((review) => {
-        //     if(review.id === updatedReview.id) {
-        //         return updatedReview
-        //     }
-        //     return review
-        // })
-        // setReviews(updatedReviews)
+        const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) =>{
+            if(anticipatedGame.id === updatedReview.anticipated_game_id) {
+                const updatedAnticipatedGames = anticipatedGame.reviews.map((review) => review.id === updatedReview.id ? updatedReview : anticipatedGame)
+                anticipatedGame.reviews = updatedAnticipatedGames
+            
+            }
+                return anticipatedGame
+        })
+        setAnticipatedGames(updatedAnticipatedGames)
     }
 
 

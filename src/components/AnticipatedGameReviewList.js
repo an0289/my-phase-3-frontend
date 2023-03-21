@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Form, Button, Divider, Segment, Label, List, Icon } from 'semantic-ui-react'
+import { Button, Segment, List } from 'semantic-ui-react'
 import AnticipatedGameReview from './AnticipatedGameReview'
 import NewAnticipatedGameReview from './NewAnticipatedGameReview'
 
 
 function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeeingReviews, onAddReview, onDeleteReview, onUpdateReview }) {
 
-    const { name, id, reviews } = anticipatedGame
+    const { id, reviews } = anticipatedGame
     
     const [isAdding, setIsAdding] = useState(false)
 
@@ -14,12 +14,12 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
     <Segment raised>
     <List divided relaxed>
     {reviews.map((review) => (
-    <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview/>
+    <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
     ))}
     </List>
-    <Button floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
+    <Button floated="left" onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
     {isAdding ? (<NewAnticipatedGameReview anticipatedGameId={id}setIsAdding={setIsAdding} onAddReview={onAddReview} />) : (
-    <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated right>Add Review</Button>
+    <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated="right">Add Review</Button>
     )}
     
     </Segment>
