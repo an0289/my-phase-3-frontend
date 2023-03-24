@@ -16,7 +16,7 @@ function Home() {
                         Check out some of the most anticipated games set to come out this year in 2023! And, while you're at it, go take a peak at the top 10 games of 2022
                     </Header>
                     <Header style={{ fontStyle:"italic" }} as="h3">
-                        Feel free to leave reviews on any of the games listed that you have played 
+                        Feel free to leave reviews on any of the games listed that you have played, or add a game you're super excited for
                     </Header>
                 </Segment>
                 
