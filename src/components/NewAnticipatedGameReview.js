@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { List, Form, Button } from 'semantic-ui-react'
 
-function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding }) {
+function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding, isAdding }) {
 
     const [username, setUsername] = useState("")
     const [comment, setComment] = useState("")
@@ -69,7 +69,8 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
                     placeholder="comment" /></List.Description>
             </List.Content>
         </List.Item>
-        <Button type="submit">Submit</Button>
+        <Button color="black" type="submit">Submit</Button>
+        <Button color="red" onClick={() => setIsAdding((isAdding) => !isAdding)}>Cancel</Button>
         </List>
     </Form>
     </>

@@ -16,9 +16,12 @@ function TopGameReviewList({ topGame, onAddReview, onDeleteReview, onUpdateRevie
     <TopGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
     ))}
     </List>
+    
+    {isAdding ? (<NewTopGameReview topGameId={id} setIsAdding={setIsAdding} isAdding={isAdding} onAddReview={onAddReview} />) : (
+    <>
     <Button inverted color="blue" floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
-    {isAdding ? (<NewTopGameReview topGameId={id} setIsAdding={setIsAdding} onAddReview={onAddReview} />) : (
     <Button inverted color="green" onClick={() => setIsAdding((isAdding) => !isAdding)} floated right>Add Review</Button>
+    </>
     )}
     
     </Segment>

@@ -1,71 +1,53 @@
-# Getting Started with Create React App
+# My Phase 3 Project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello! Take a peek at some of the exciting games 2023 has to offer while reminiscing about the amazing games 2022 gave us. Feel free to leave reviews for any of the games you've played and if you happen to have a game that you're excited to see come out in 2023, go ahead and add it to the list!
 
-## Available Scripts
+## Programming Languages 
 
-In the project directory, you can run:
+[React.js](https://react.dev/) and [Semantic UI](https://react.semantic-ui.com/) are responsible for the design of this app, while [Ruby's Active Record](https://guides.rubyonrails.org/active_record_basics.html) and [Sinatra](https://sinatrarb.com/) were used to create the backend data.
+                        
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users can view games that are set to come out in 2023 in an easy-to-read card format that displays the game's name, an image of the game's title, release date, which platforms the game will be released on, and a link to the game's website.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![AGOverview](/src/assets/Screenshot 2023-03-26 210154.png)
 
-### `npm test`
+The Top Game of 2022 contains a list of the top 10 games of 2022 and includes the game's ranking, developers, platforms, and genre.   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![TGOverview](/src/assets/Screenshot 2023-03-26 210217.png)
 
-### `npm run build`
+Oh no! Did the release date for that one game you've been super excited for get pushed back? Well, thankfully, users can edit the game card to have the most current release date show.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Edit](/src/assets/Screenshot 2023-03-26 210329.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Is there a game that you've been looking forward to that isn't shown? Go ahead and click the green "add" button on the top of the page so it can be added to the list. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Add](/src/assets/Screenshot 2023-03-26 211239.png)
+![AddForm](/src/assets/Screenshot 2023-03-26 211306.png)
 
-### `npm run eject`
+Did you add a game that you're no longer excited for, or the release date pushes it back another year? The handy "delete" button located near the bottom of the card will remove it from the list. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Delete](/src/assets/Screenshot 2023-03-26 211350.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Both anticipated games and the top 10 games of 2022 have a reviews section that can be hidden or shown. Users are free to add, edit, or delete a review they felt for a game. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Review](/src/assets/Screenshot 2023-03-26 211758.png)
+![ReviewEdit](/src/assets/Screenshot 2023-03-26 211819.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thanks to [Create React App](https://github.com/facebook/create-react-app) for providing the starter code for my app. 
 
-### Code Splitting
+Thanks to [Lucie Liz](https://www.pexels.com/photo/flatlay-of-gaming-equipments-3165335/) on [Pexels](https://www.pexels.com/) for the home page background photo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+And, finally, thanks to [Kotaku](https://kotaku.com/goty-best-games-2022-elden-ring-god-war-ragnarok-marvel-1849934499) for their Top 10 Games of 2022 List and [Game Informer](https://www.gameinformer.com/2023/01/11/game-informers-25-most-anticipated-games-of-2023) for their Top 25 Most Anticipated Games of 2023 List that were used for this app. 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Please make sure to update tests as appropriate.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-This is my readme file
+[MIT](https://choosealicense.com/licenses/mit/)
