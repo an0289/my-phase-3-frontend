@@ -27,10 +27,12 @@ function App() {
         .then((r) => r.json())
         .then((anticipatedGames) => {
             setAnticipatedGames(anticipatedGames)
-            console.log(anticipatedGames)
         })
     }, [])
 
+    function handleAddGame(newGame) {
+        setAnticipatedGames([...anticipatedGames, newGame])
+    }
 
     function handleUpdateReleaseDate(updatedAnticipatedGame) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
@@ -130,6 +132,7 @@ function App() {
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
                 onUpdateReview={handleUpdateReviewAG}
+                onAddGame={handleAddGame}
                  />
             </Route>
             <Route exact path="/top_games">

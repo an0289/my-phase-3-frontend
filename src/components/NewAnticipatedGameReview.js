@@ -28,8 +28,7 @@ function NewAnticipatedGameReview({ anticipatedGameId, onAddReview, setIsAdding 
         })
           .then((r) => r.json())
           .then((newReview) => {
-            onAddReview(newReview, console.log('am I working?'))
-            console.log(newReview)
+            onAddReview(newReview)
           })
     }
 

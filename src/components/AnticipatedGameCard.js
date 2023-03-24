@@ -9,16 +9,6 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
     const [isEdit, setIsEdit] = useState(false)
     const [changeDate, setChangeDate] = useState("")
     
-    
-    
-
-   
-
-    // useEffect(() =>{
-    //     setChangeDate(anticipatedGame)
-    //     // console.log(reviews)
-    // }, [anticipatedGame])
-
 
     function handleEditDateSubmit(e) {
         e.preventDefault()
