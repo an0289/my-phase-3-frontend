@@ -4,14 +4,11 @@ import TopGameCard from './TopGameCard'
 
 function TopGames({ topGames, setTopGames, onDeleteReview, onAddReview, onUpdateReview }) {
 return (
-    <div style={{ background:"linear-gradient(to left, #FFFFFF, #7B45E7)" }}>
-    <Divider hidden />
-    <Container style={{ paddingLeft:430, paddingTop: 30}}>
-        <Segment inverted raised circular  >
-            <Header style={{ fontFamily:"Arial"}}as="h1">
+    <div style={{ background:"white" }}>
+     <Container fluid style={{ background: "black"}}>
+            <Header textAlign="right" style={{ fontFamily: "Garamond", fontSize:"40px", color: "white", paddingRight:150, paddingBottom:50}}>
                 Top Games of 2022
             </Header>
-        </Segment>
             <Divider hidden />
         </Container>
     <Divider hidden />

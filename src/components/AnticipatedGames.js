@@ -16,9 +16,9 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
 
 
     return (
-        <div style={{background: "linear-gradient(to left, #FFFFFF, #7B45E7)" }}>
+        <div style={{background: "white" }}>
         <Container fluid style={{ background: "black"}}>
-            <Header textAlign="right" style={{ fontFamily: "Garamond", fontSize:"40px", color: "white", paddingRight:150, paddingBottom:50}}>
+            <Header textAlign="right" style={{ fontFamily: "Garamond", fontSize:"40px", color: "white", paddingRight:100, paddingBottom:50}}>
                 Most Anticipated Games of 2023
             </Header>
             <Divider hidden />
