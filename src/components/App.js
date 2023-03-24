@@ -11,7 +11,6 @@ import Home from './Home'
 function App() {
     const [topGames, setTopGames] = useState([])
     const [anticipatedGames, setAnticipatedGames] = useState([])
-    // const [currentGame, setCurrentGame] = useState([{reviews: []}])
     const [searchWord, setSearchWord] = useState("")
     
     
@@ -44,7 +43,7 @@ function App() {
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
-    function handleAddReview(review) {
+    function handleAddReviewAG(review) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
             if(anticipatedGame.id === review.anticipated_game_id) {
                 const newReviews = [...anticipatedGame.reviews, review]
@@ -55,7 +54,7 @@ function App() {
         setAnticipatedGames(updatedAnticipatedGames)
     }
 
-    function handleDeleteReview(review) {
+    function handleDeleteReviewAG(review) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
             if(anticipatedGame.id === review.anticipated_game_id) {
                 const updatedReviewList = anticipatedGame.reviews.filter((rev) => rev.id !== review.id)
@@ -65,8 +64,8 @@ function App() {
         })
         setAnticipatedGames(updatedAnticipatedGames)
       }
-
-    function handleUpdateReview(updatedReview) {
+ 
+    function handleUpdateReviewAG(updatedReview) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) =>{
             if(anticipatedGame.id === updatedReview.anticipated_game_id) {
                 const updatedAnticipatedGames = anticipatedGame.reviews.map((review) => review.id === updatedReview.id ? updatedReview : anticipatedGame)
@@ -76,6 +75,42 @@ function App() {
                 return anticipatedGame
         })
         setAnticipatedGames(updatedAnticipatedGames)
+    }
+
+    // top games 
+
+    function handleAddReviewTG(review) {
+        const updatedTopGames = topGames.map((topGame) => {
+            if(topGame.id === review.top_game_id) {
+                const newReviews = [...topGame.reviews, review]
+                topGame.reviews = newReviews
+            } 
+                return topGame 
+        })  
+        setAnticipatedGames(updatedTopGames)
+    }
+
+    function handleDeleteReviewTG(review) {
+        const updatedTopGames = topGames.map((topGame) => {
+            if(topGame.id === review.top_game_id) {
+                const updatedReviewList = topGame.reviews.filter((rev) => rev.id !== review.id)
+                topGame.reviews = updatedReviewList
+            }
+                return topGame
+        })
+        setAnticipatedGames(updatedTopGames)
+      }
+
+    function handleUpdateReviewTG(updatedReview) {
+        const updatedTopGames = topGames.map((topGame) =>{
+            if(topGame.id === updatedReview.top_game_id) {
+                const updatedTopGames = topGame.reviews.map((review) => review.id === updatedReview.id ? updatedReview : topGame)
+                topGame.reviews = updatedTopGames
+            
+            }
+                return topGame
+        })
+        setAnticipatedGames(updatedTopGames)
     }
 
 
@@ -90,18 +125,18 @@ function App() {
             <Route exact path="/anticipated_games">
                 <AnticipatedGames  anticipatedGames={anticipatedGames} 
                 onUpdateReleaseDate={handleUpdateReleaseDate}
-                onAddReview={handleAddReview}
-                onDeleteReview={handleDeleteReview}
+                onAddReview={handleAddReviewAG}
+                onDeleteReview={handleDeleteReviewAG}
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
-                onUpdateReview={handleUpdateReview}
+                onUpdateReview={handleUpdateReviewAG}
                  />
             </Route>
             <Route exact path="/top_games">
                 <TopGames  topGames={topGames} setTopGames={setTopGames}
-                onAddReview={handleAddReview}
-                onDeleteReview={handleDeleteReview}
-                onUpdateReview={handleUpdateReview}/>
+                onAddReview={handleAddReviewTG}
+                onDeleteReview={handleDeleteReviewTG}
+                onUpdateReview={handleUpdateReviewTG}/>
             </Route>
             <Route exact path="/">
                 <Home />

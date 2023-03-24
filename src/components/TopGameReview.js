@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { List, Button, Icon, Label, Image, Form } from 'semantic-ui-react'
 
-function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) {
+function TopGameReview({ review, onUpdateReview, onDeleteReview }) {
     const { id, username, avatar, comment, score, created_at: createdAt, updated_at: updatedAt } = review 
 
     const [isEditing, setIsEditing] = useState(false)
@@ -18,7 +18,7 @@ function TopGameReview({ review, onUpdateReview, onDeleteReview, onAddReview }) 
         })
         .then((r) => r.json())
         .then((deletedReview) => {
-            onDeleteReview(deletedReview, console.log('not sure if Im working'))
+            onDeleteReview(deletedReview)
             console.log(deletedReview)
         })
         

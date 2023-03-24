@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import TopGameReviewList from './TopGameReviewList'
-import { Card, Grid, Divider, Item, Button } from 'semantic-ui-react'
+import { Card, Grid, Divider, Item, Button, Label } from 'semantic-ui-react'
 
 function TopGameCard({ topGame, onAddReview, onDeleteReview, onUpdateReview }) {
    

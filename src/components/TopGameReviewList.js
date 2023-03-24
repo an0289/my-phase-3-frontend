@@ -13,7 +13,7 @@ function TopGameReviewList({ topGame, onAddReview, onDeleteReview, onUpdateRevie
     <Segment raised>
     <List divided relaxed>
     {reviews.map((review) => (
-    <TopGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview/>
+    <TopGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
     ))}
     </List>
     <Button floated left onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>

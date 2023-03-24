@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Header, Grid, Image, Search, Divider, Segment } from 'semantic-ui-react'
 import TopGameCard from './TopGameCard'
 
-function TopGames({ topGames, setTopGames, onAddDelete, onAddReview, onUpdateReview }) {
+function TopGames({ topGames, setTopGames, onDeleteReview, onAddReview, onUpdateReview }) {
 return (
     <div style={{ backgroundColor:"white" }}>
     <Divider hidden />
@@ -18,7 +18,7 @@ return (
         <Container>
                 {topGames.map((topGame) => (
                 <TopGameCard key={topGame.id} topGame={topGame} setTopGames={setTopGames}
-                onAddDelete={onAddDelete} onAddReview={onAddReview} onUpdateReview={onUpdateReview}
+                onDeleteReview={onDeleteReview} onAddReview={onAddReview} onUpdateReview={onUpdateReview}
                 />
                 ))}    
         </Container>
