@@ -34,6 +34,11 @@ function App() {
         setAnticipatedGames([...anticipatedGames, newGame])
     }
 
+    function handleDeleteGame(id) {
+        const updatedGames = anticipatedGames.filter((game) => game.id !== id)
+        setAnticipatedGames(updatedGames)
+    }
+
     function handleUpdateReleaseDate(updatedAnticipatedGame) {
         const updatedAnticipatedGames = anticipatedGames.map((anticipatedGame) => {
             if(anticipatedGame.id === updatedAnticipatedGame.id) {
@@ -133,6 +138,7 @@ function App() {
                 setSearchWord={setSearchWord}
                 onUpdateReview={handleUpdateReviewAG}
                 onAddGame={handleAddGame}
+                onDeleteGame={handleDeleteGame}
                  />
             </Route>
             <Route exact path="/top_games">

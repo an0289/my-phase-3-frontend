@@ -6,7 +6,7 @@ import NewGame from './NewGame'
 
 
 
-function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview, onAddGame }) {
+function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateReleaseDate, onAddReview, onDeleteReview, searchWord, setSearchWord, onUpdateReview, onAddGame, onDeleteGame }) {
 
     const anticipatedGamesToDisplay = anticipatedGames.filter((anticipatedGame) => {
         if(searchWord === "") return true;
@@ -50,7 +50,8 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
                      onUpdateReleaseDate={onUpdateReleaseDate}
                      onAddReview={onAddReview}
                      onDeleteReview={onDeleteReview}
-                      onUpdateReview={onUpdateReview}/>   
+                      onUpdateReview={onUpdateReview}
+                      onDeleteGame={onDeleteGame}/>   
                      ))} 
                 </Grid.Row>
             </Grid>

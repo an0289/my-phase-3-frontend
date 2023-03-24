@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Card, Grid, Divider, Button, Icon, Feed, List, Segment, Form } from 'semantic-ui-react'
 import AnticipatedGameReviewList from './AnticipatedGameReviewList'
 
-function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview, onUpdateReview }) {
+function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview, onDeleteReview, onUpdateReview, onDeleteGame }) {
     
     const { name, image, id, platforms, release_date: releaseDate, website } = anticipatedGame 
     const [isSeeingReviews, setIsSeeingReviews] = useState(false)
@@ -26,6 +26,16 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
             .then((updatedAnticipatedGame) => onUpdateReleaseDate(updatedAnticipatedGame))
         
     }
+
+    function handleDeleteClick() {
+        console.log('clicked')
+        fetch(`http://localhost:9292/anticipated_games/${id}`, {
+            method: "DELETE"
+        })
+        .then((r) => r.json())
+        .then(() => onDeleteGame(id))
+        }
+        
 
     return (
         <>
@@ -75,6 +85,10 @@ function AnticipatedGameCard({ anticipatedGame, onUpdateReleaseDate, onAddReview
                     <Card.Description style={{ fontWeight: 'bold' }} as='a' href={website}>
                         Click here to learn more about this game
                     </Card.Description>
+                    <Divider hidden />
+                    <Button onClick={handleDeleteClick} size="tiny" floated="right" inverted color="red">
+                        Delete Game
+                    </Button>
                     </Card.Content>     
                 )}
                 {isSeeingReviews ? (

@@ -19,7 +19,7 @@ function AnticipatedGameReview({ review, onDeleteReview, onUpdateReview }) {
         })
         .then((r) => r.json())
         .then((deletedReview) => {
-            onDeleteReview(deletedReview, console.log('not sure if Im working'))
+            onDeleteReview(deletedReview)
             console.log(deletedReview)
         })
         
