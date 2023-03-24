@@ -87,7 +87,7 @@ function App() {
             } 
                 return topGame 
         })  
-        setAnticipatedGames(updatedTopGames)
+        setTopGames(updatedTopGames)
     }
 
     function handleDeleteReviewTG(review) {
@@ -98,7 +98,7 @@ function App() {
             }
                 return topGame
         })
-        setAnticipatedGames(updatedTopGames)
+        setTopGames(updatedTopGames)
       }
 
     function handleUpdateReviewTG(updatedReview) {
@@ -110,7 +110,7 @@ function App() {
             }
                 return topGame
         })
-        setAnticipatedGames(updatedTopGames)
+        setTopGames(updatedTopGames)
     }
 
 

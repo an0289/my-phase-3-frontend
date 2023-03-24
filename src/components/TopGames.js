@@ -4,7 +4,7 @@ import TopGameCard from './TopGameCard'
 
 function TopGames({ topGames, setTopGames, onDeleteReview, onAddReview, onUpdateReview }) {
 return (
-    <div style={{ backgroundColor:"white" }}>
+    <div style={{ background:"linear-gradient(to left, #FFFFFF, #7B45E7)" }}>
     <Divider hidden />
     <Container style={{ paddingLeft:430, paddingTop: 30}}>
         <Segment inverted raised circular  >
