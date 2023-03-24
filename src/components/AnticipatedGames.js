@@ -33,7 +33,7 @@ function AnticipatedGames({ anticipatedGames, setAnticipatedGames, onUpdateRelea
                 value={searchWord}
                 onSearchChange={(e) => setSearchWord(e.target.value)}
             />
-            <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated="right" color="green">
+            <Button size="large" onClick={() => setIsAdding((isAdding) => !isAdding)} floated="right" color="green">
             Add Game
         </Button>
         </Container>

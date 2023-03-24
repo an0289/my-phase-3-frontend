@@ -17,9 +17,9 @@ function AnticipatedGameReviewList({ anticipatedGame, setIsSeeingReviews, isSeei
     <AnticipatedGameReview review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
     ))}
     </List>
-    <Button floated="left" onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
+    <Button inverted color="blue" floated="left" onClick={() => setIsSeeingReviews((isSeeingReviews) => !isSeeingReviews)}>Hide Reviews</Button>
     {isAdding ? (<NewAnticipatedGameReview anticipatedGameId={id}setIsAdding={setIsAdding} onAddReview={onAddReview} />) : (
-    <Button onClick={() => setIsAdding((isAdding) => !isAdding)} floated="right">Add Review</Button>
+    <Button inverted color="green" onClick={() => setIsAdding((isAdding) => !isAdding)} floated="right">Add Review</Button>
     )}
     
     </Segment>
