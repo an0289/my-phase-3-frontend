@@ -11,29 +11,29 @@ Hello! Take a peek at some of the exciting games 2023 has to offer while reminis
 
 Users can view games that are set to come out in 2023 in an easy-to-read card format that displays the game's name, an image of the game's title, release date, which platforms the game will be released on, and a link to the game's website.
 
-![AGOverview](/src/assets/Screenshot 2023-03-26 210154.png)
+![AGOverview](/Screenshot%202023-03-26%20210154.png)
 
 The Top Game of 2022 contains a list of the top 10 games of 2022 and includes the game's ranking, developers, platforms, and genre.   
 
-![TGOverview](/src/assets/Screenshot 2023-03-26 210217.png)
+![TGOverview](/Screenshot%202023-03-26%20210217.png)
 
 Oh no! Did the release date for that one game you've been super excited for get pushed back? Well, thankfully, users can edit the game card to have the most current release date show.
 
-![Edit](/src/assets/Screenshot 2023-03-26 210329.png)
+![Edit](/Screenshot%202023-03-26%20210329.png)
 
 Is there a game that you've been looking forward to that isn't shown? Go ahead and click the green "add" button on the top of the page so it can be added to the list. 
 
-![Add](/src/assets/Screenshot 2023-03-26 211239.png)
-![AddForm](/src/assets/Screenshot 2023-03-26 211306.png)
+![Add](/Screenshot%202023-03-26%20211239.png)
+![AddForm](/Screenshot%202023-03-26%20211306.png)
 
 Did you add a game that you're no longer excited for, or the release date pushes it back another year? The handy "delete" button located near the bottom of the card will remove it from the list. 
 
-![Delete](/src/assets/Screenshot 2023-03-26 211350.png)
+![Delete](/Screenshot%202023-03-26%20211350.png)
 
 Both anticipated games and the top 10 games of 2022 have a reviews section that can be hidden or shown. Users are free to add, edit, or delete a review they felt for a game. 
 
-![Review](/src/assets/Screenshot 2023-03-26 211758.png)
-![ReviewEdit](/src/assets/Screenshot 2023-03-26 211819.png)
+![Review](/Screenshot%202023-03-26%20211758.png)
+![ReviewEdit](/Screenshot%202023-03-26%20211819.png)
 
 
 
